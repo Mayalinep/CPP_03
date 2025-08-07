@@ -1,6 +1,6 @@
-NAME = FragTrap
+NAME = DiamondTrap
 
-SRCS = FragTrap.cpp ClapTrap.cpp main.cpp
+SRCS = DiamondTrap.cpp FragTrap.cpp ScavTrap.cpp ClapTrap.cpp main.cpp
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
