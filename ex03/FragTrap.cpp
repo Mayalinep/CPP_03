@@ -10,7 +10,7 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
     setHitPoints(100);
     setEnergyPoints(100);
     setAttackDamage(30);
-    std::cout << "FragTrap " << name << " is created!" << std::endl;
+    std::cout << "FragTrap constructor called" << std::endl;
 }
 
 FragTrap::FragTrap(const FragTrap &rhs) : ClapTrap(rhs){
@@ -30,6 +30,5 @@ void FragTrap::highFivesGuys(){
 }
 
 FragTrap::~FragTrap(){
-    std::cout << "FragTrap " << getName() << " is destroyed!" << std::endl;
+    std::cout << "FragTrap destructor called" << std::endl;
 }
-
