@@ -1,6 +1,6 @@
 NAME = ScavTrap
 
-SRCS = ClapTrap.cpp ScavTrap.cpp main_jeu.cpp
+SRCS = ClapTrap.cpp ScavTrap.cpp heritage_pratique.cpp
 OBJ_DIR = obj
 OBJS = $(addprefix $(OBJ_DIR)/, $(SRCS:.cpp=.o))
 
