@@ -3,6 +3,9 @@
 #include <iostream>
 
 FragTrap::FragTrap() : ClapTrap(){
+    setHitPoints(100);
+    setEnergyPoints(100);
+    setAttackDamage(30);
     std::cout << "FragTrap default constructor called" << std::endl;
 }
 
@@ -14,12 +17,13 @@ FragTrap::FragTrap(std::string name) : ClapTrap(name){
 }
 
 FragTrap::FragTrap(const FragTrap &rhs) : ClapTrap(rhs){
-    *this = rhs;
+    std::cout << "FragTrap copy constructor called" << std::endl;
 }
 
 FragTrap& FragTrap::operator=(const FragTrap &rhs){
     if (this != &rhs){
         ClapTrap::operator=(rhs);
+        std::cout << "FragTrap copy assignment operator called" << std::endl;
     }
     return *this;
 }

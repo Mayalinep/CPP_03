@@ -1,14 +1,16 @@
 #include "DiamondTrap.hpp"
 #include <iostream>
 
-DiamondTrap::DiamondTrap(){
+DiamondTrap::DiamondTrap(): ClapTrap("_clap_name"), FragTrap(), ScavTrap(){
     _name = "";
+    setHitPoints(100);
+    setEnergyPoints(50);
+    setAttackDamage(30);
 
 }
 
 DiamondTrap::DiamondTrap(std::string name): ClapTrap(name + "_clap_name"), FragTrap(name), ScavTrap(name){
     _name = name;
-    // ClapTrap::setName(name + "_clap_name");
     setHitPoints(100);
     setEnergyPoints(50);
     setAttackDamage(30);
@@ -19,8 +21,8 @@ const std::string DiamondTrap::getName() const
     return _name;
 }
 
-DiamondTrap::DiamondTrap(const DiamondTrap &rhs){
-    *this = rhs;
+DiamondTrap::DiamondTrap(const DiamondTrap &rhs): ClapTrap(rhs), FragTrap(rhs), ScavTrap(rhs){
+    std::cout << "DiamondTrap copy constructor called" << std::endl;
 }
 
 DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs){
@@ -28,9 +30,10 @@ DiamondTrap &DiamondTrap::operator=(const DiamondTrap &rhs){
     {
         _name = rhs._name;
         ClapTrap::setName(rhs.ClapTrap::getName());
-        setHitPoints(rhs.getHitPoints());
-        setEnergyPoints(rhs.getEnergyPoints());
-        setAttackDamage(rhs.getAttackDamage());
+        setHitPoints(100);
+        setEnergyPoints(50);
+        setAttackDamage(30);
+        std::cout << "DiamondTrap copy assignment operator called" << std::endl;
     }
     return *this;
 }
